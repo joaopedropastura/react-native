@@ -1,4 +1,4 @@
-import { Button, Text, TextInput, View, StyleSheet } from 'react-native';
+import { Button, Text, TextInput, View, StyleSheet, Switch } from 'react-native';
 import { useState, useContext } from 'react';
 import { UtilsContext } from './context'
 
@@ -6,6 +6,7 @@ const Login = (props) => {
 
     const {data, setData} = useContext(UtilsContext)
     const [email, setEmail] = useState('')
+    const [notificacoes, setNotificacoes] = useState('')
     const [password, setPassword] = useState('')
 
     const goToHome = () => {
@@ -40,7 +41,18 @@ const Login = (props) => {
 
             />
         </View>
+
+
         <View style={{gap: 10}}>
+            <View style={{flex: 1, flexDirection: 'row', gap:5}}>
+                <Switch
+                    value={notificacoes}
+                    onValueChange={
+                        () => setNotificacoes(!notificacoes)
+                    }
+                />
+                <Text>Ativar notificacoes</Text>
+            </View>
             <Button onPress={() => goToHome()}
             title='Home'
             ></Button>
