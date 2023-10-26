@@ -6,7 +6,6 @@ const Login = (props) => {
 
     const {data, setData} = useContext(UtilsContext)
     const [email, setEmail] = useState('')
-    const [notificacoes, setNotificacoes] = useState('')
     const [password, setPassword] = useState('')
 
     const goToHome = () => {
@@ -44,15 +43,7 @@ const Login = (props) => {
 
 
         <View style={{gap: 10}}>
-            <View style={{flex: 1, flexDirection: 'row', gap:5}}>
-                <Switch
-                    value={notificacoes}
-                    onValueChange={
-                        () => setNotificacoes(!notificacoes)
-                    }
-                />
-                <Text>Ativar notificacoes</Text>
-            </View>
+            
             <Button onPress={() => goToHome()}
             title='Home'
             ></Button>

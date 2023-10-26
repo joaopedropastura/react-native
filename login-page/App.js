@@ -24,11 +24,11 @@ export default function App() {
       <UtilsContext.Provider value={{data, setData}}>
       <Stack.Navigator>
         <Stack.Screen options={{headerShown:false}} name="Login" component={Login}  />
-        <Stack.Screen options={{headerShown:false}} name="Register">
+        <Stack.Screen  name="Register">
           { props => <Register {...props} addUser={addUser}/> }
         </Stack.Screen>
 
-        <Stack.Screen options={{headerShown:false}} name="Home" component={Home}  />
+        <Stack.Screen name="Home" component={Home}  />
       </Stack.Navigator>
       </UtilsContext.Provider>
     </NavigationContainer>

@@ -17,6 +17,8 @@ const Register = ({addUser, navigation }) => {
     const [password2, setPassword2] = useState('')
     const [age, setAge] = useState('')
     const [email, setEmail] = useState('')
+    const [notificacoes, setNotificacoes] = useState('')
+
     const [sex, setSex] = useState('')
 
     const {data, setData} = useContext(UtilsContext)
@@ -82,6 +84,7 @@ const Register = ({addUser, navigation }) => {
                 <TextInput
                     onChangeText={(password) => setPassword(password)}
                     style={styles.textInput}
+                    secureTextEntry={true}
                 />
             </View>
             <View style={styles.textComponent}>
@@ -89,6 +92,7 @@ const Register = ({addUser, navigation }) => {
                 <TextInput
                     onChangeText={(password) => setPassword2(password)}
                     style={styles.textInput}
+                    secureTextEntry={true}
                 />
             </View>
 
@@ -97,7 +101,15 @@ const Register = ({addUser, navigation }) => {
                 value={color}
                 onValueChange={(value) => setColor(!value)}
             /> */}
-
+            <View style={{flex: 1, flexDirection: 'row', gap:5}}>
+                <Switch
+                    value={notificacoes}
+                    onValueChange={
+                        () => setNotificacoes(!notificacoes)
+                    }
+                />
+                <Text>Ativar notificacoes</Text>
+            </View>
             <Button onPress={() => verifyLogin()}
             title='Login'
             ></Button>
